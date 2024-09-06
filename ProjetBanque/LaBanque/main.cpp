@@ -15,7 +15,7 @@ int main()
     Menu menuCB("../LaBanque/client.txt");
     //CompteBancaire leCompte;
     //CompteEpargne leCompte(3);
-    CompteClient leCompte;
+    CompteClient leCompte();
     int touche;
     float montant;
 
@@ -74,7 +74,7 @@ int main()
         return 0;
 
 
-        /**
+
          *     do{
         touche = menuCB.Afficher();
         switch (touche){

@@ -4,10 +4,10 @@
 #include "comptebancaire.h"
 #include "compteepargne.h"
 
-class CompteClient
+class CompteClient : public CompteBancaire
 {
 public:
-    CompteClient(char _nom,int numero);
+    CompteClient(char _nom, int numero);
 
     void OuvrirCompteEpargne();
     void GererCompteBancaire();
@@ -16,6 +16,7 @@ public:
 private:
     char nom;
     int numero;
+    float solde;
 };
 
 #endif // COMPTECLIENT_H
