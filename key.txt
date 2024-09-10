@@ -1,3 +1,0 @@
-git clone https://github.com/gedgeo/C-.git
-Username: gedgeo
-Password: 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
