@@ -7,7 +7,18 @@
 class BarreCarree:public Barre
 {
 public:
-    BarreCarree();
+    BarreCarree(string _reference,string _nomAlliage,
+                const unsigned int _longueur,const double _densite);
+    void AfficherCaracteristique();
+    double CalculerMasse();
+
+protected:
+    int longueur;
+    double densite;
+    string reference;
+    string nomAlliage;
+
+
 };
 
 #endif // BARRECARREE_H

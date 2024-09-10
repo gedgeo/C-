@@ -8,15 +8,18 @@
 class BarreRectangle : public Barre
 {
 public:
-    BarreRectangle(string _reference,string _nomAlliage, const unsigned int _longueur,const double _densite,
-                   const unsigned int _diametre);
+    BarreRectangle(string _reference,string _nomAlliage,
+                   const unsigned int _longueur,const unsigned int _largeur,const double _densite);
 
     void AfficherCaracteristique();
-    double CalculerSection();
     double CalculerMasse();
 
 protected:
-
+    int longueur;
+    int largeur;
+    double densite;
+    string reference;
+    string nomAlliage;
 };
 
 #endif // BARRERECTANGLE_H

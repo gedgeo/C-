@@ -1,13 +1,14 @@
 #include "barre.h"
-#include <string>
 #include <iostream>
+#include <string>
+#include <math.h>
 
 
 Barre::Barre(const string _reference, const string _nomAlliage,const int _longueur, const float _densite):
-reference (_reference),
-nomAlliage (_nomAlliage),
-longueur (_longueur),
-densite (_densite)
+    reference (_reference),
+    nomAlliage (_nomAlliage),
+    longueur (_longueur),
+    densite (_densite)
 {
 
 }
