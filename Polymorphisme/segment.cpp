@@ -7,7 +7,7 @@ Segment::Segment(const double _longueur, const double _angle):
 
 }
 
-void Segment::afficher()
+void Segment::Afficher()
 {
     cout << " SEGMENT l =" << longueur<< "  |  "<<"A = "<< angle <<endl;
 }

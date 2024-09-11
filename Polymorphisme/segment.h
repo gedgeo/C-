@@ -10,7 +10,7 @@ class Segment : public Element
 {
 public:
     Segment(const double _longueur,const double _angle );
-    virtual void afficher();
+    virtual void Afficher();
 
 protected:
     double longueur;

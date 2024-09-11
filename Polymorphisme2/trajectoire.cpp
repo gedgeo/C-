@@ -19,13 +19,15 @@ Trajectoire::~Trajectoire()
     delete[]parcours;
 }
 
-bool Trajectoire::ajouter(Element *_pElement)
+bool Trajectoire::Ajouter(Element *_pElement)
 {
     bool retour = true;
+
     if(prochaineEtape < nbEtapesMax)
         parcours[prochaineEtape++] = _pElement;
     else
         retour = false;
+
     return retour;
 }
 

@@ -8,11 +8,6 @@ Element::Element()
 {
 
 }
-void Element::Afficher()
-{
-}
-
-
 
 Element::~Element()
 {

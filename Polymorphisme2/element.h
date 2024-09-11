@@ -11,8 +11,6 @@ public:
     virtual ~Element();
     virtual void Afficher() = 0;
 
-
-protected:
 };
 
 #endif // ELEMENT_H

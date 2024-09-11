@@ -14,7 +14,7 @@ class Trajectoire
 public:
     Trajectoire(const int _nbEtapesMaxi);
     ~Trajectoire();
-    bool ajouter(Element *_pElement);
+    bool Ajouter(Element *_pElement);
     void Afficher();
 
 

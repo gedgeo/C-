@@ -7,11 +7,12 @@ using namespace std;
 
 int main()
 {
-    Trajectoire laTrajecctoire(2);
-    laTrajecctoire.ajouter(new Segment(9,0));
-    laTrajecctoire.ajouter(new Segment(5, 0.927295));
+    Trajectoire laTrajectoire(2);
 
-    laTrajecctoire.Afficher();
+    laTrajectoire.Ajouter(new Segment(9, 0));
+    laTrajectoire.Ajouter(new Segment(5, 0.927295));
+
+    laTrajectoire.Afficher();
 
     return 0;
 }
