@@ -11,7 +11,10 @@ class Segment : public Element
 {
 public:
     Segment(const double _longueur, const double _angle);
-    virtual void Afficher();
+    void Afficher();
+    int ObtenirLongueur();
+    int ObtenirDuree();
+    Vecteur ObtenirVecteurArrive();
 
 protected:
     double longueur;
