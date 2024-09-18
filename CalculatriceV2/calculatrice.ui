@@ -3,7 +3,7 @@
  <class>Calculatrice</class>
  <widget class="QMainWindow" name="Calculatrice">
   <property name="enabled">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="geometry">
    <rect>

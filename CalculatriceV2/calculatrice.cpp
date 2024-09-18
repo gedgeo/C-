@@ -9,6 +9,13 @@ Calculatrice::Calculatrice(QWidget *parent)
     , ui(new Ui::Calculatrice)
 {
     ui->setupUi(this);
+
+    QList<QPushButton*> allButtons = this->findChildren<QPushButton*>();
+    foreach(QPushButton* button, allButtons) {
+        if(button->text() != "=" && button->text() != "C") {
+            connect(button, &QPushButton::clicked, this, &Calculatrice::onQPushButtonClicked);
+        }
+    }
 }
 
 Calculatrice::~Calculatrice()
@@ -18,16 +25,11 @@ Calculatrice::~Calculatrice()
 
 void Calculatrice::onQPushButtonClicked()
 {
-    QObject *senderObject = sender();
-    QPushButton *touche = qobject_cast<QPushButton*>(senderObject);
-    if (touche) {
-        QString buttonText = touche->text();
-        QLineEdit->setText(QLineEdit->text() + buttonText);
-    } else {
-        QLineEdit->setText("Erreur");
-    }
+    QPushButton *touche;
+    touche=qobject_cast<QPushButton*>(sender());
+    QString expression = ui->lineEdit->text();
+    ui->lineEdit->setText(expression + touche->text());
 }
-
 
 void Calculatrice::on_pushButtonEgal_clicked()
 {
@@ -35,7 +37,6 @@ void Calculatrice::on_pushButtonEgal_clicked()
     QJSValue three = myEngine.evaluate(ui->lineEdit->text());
     ui->lineEdit->setText(three.toString());
 }
-
 
 void Calculatrice::on_pushButtonEffacer_clicked()
 {
