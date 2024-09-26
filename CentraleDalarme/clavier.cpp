@@ -2,13 +2,18 @@
 #include "ui_clavier.h"
 #include <QMessageBox>
 
+/**
+ * @brief Clavier::Clavier
+ * @param parent
+ * @author Benjamin Bandou
+ */
 
 
 Clavier::Clavier(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Clavier)
     ,leDetecteur(nullptr)
-    //,leDetecteurTemporiser(nullptr)
+    ,leDetecteurTemporiser(nullptr)
 {
     ui->setupUi(this);
 
@@ -69,7 +74,7 @@ void Clavier::on_pushButton_Arret_clicked()
 void Clavier::on_pushButton_2_clicked()
 {
     if(leDetecteur==nullptr)
-    leDetecteur = new Detecteur;
+        leDetecteur = new Detecteur;
     leDetecteur->show();
 }
 
@@ -84,17 +89,17 @@ void Clavier::on_pushButton_3_clicked()
 
 void Clavier::on_pushButton_4_clicked()
 {
-    // if(leDetecteurTemporiser==nullptr)
-    //     leDetecteurTemporiser = new Detecteur;
-    // leDetecteurTemporiser->show();
+    if(leDetecteurTemporiser==nullptr)
+        leDetecteurTemporiser = new DetecteurTemporise;
+    leDetecteurTemporiser->show();
 
 }
 
 
 void Clavier::on_pushButton_5_clicked()
 {
-    // if(leDetecteurTemporiser){
-    //     leDetecteurTemporiser->hide();
-    // }
+    if(leDetecteurTemporiser){
+        leDetecteurTemporiser->hide();
+    }
 }
 

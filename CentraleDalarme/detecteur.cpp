@@ -2,6 +2,13 @@
 #include "ui_detecteur.h"
 #include <QMessageBox>
 
+/**
+ * @brief Detecteur::Detecteur
+ * @param parent
+ * @author Benjamin Bandou
+ */
+
+
 Detecteur::Detecteur(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Detecteur)

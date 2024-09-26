@@ -6,13 +6,25 @@
 #include <QTimer>
 
 #include "detecteur.h"
-//#include "detecteurtemporiser.h"
+#include "detecteurtemporise.h"
+
+/**
+ *@file clavier.h
+ *@brief Déclaration de la classe clavier
+ *@version 1.0
+ *@author Benjamin Bandou
+ *@date 26/09/2024
+ */
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Clavier;
 }
 QT_END_NAMESPACE
+
+/**
+ * @brief The Clavier class
+ */
 
 class Clavier : public QWidget
 {
@@ -21,6 +33,7 @@ class Clavier : public QWidget
 public:
     Clavier(QWidget *parent = nullptr);
     ~Clavier();
+
 
 private slots:
     void on_pushButton_Marche_clicked();
@@ -38,9 +51,13 @@ private slots:
     void on_pushButton_5_clicked();
 
 private:
+    /** @brief ui */
     Ui::Clavier *ui;
+    /** @brief timerLed */
     QTimer timerLed;
+    /** @brief leDetecteur */
     Detecteur *leDetecteur;
-    //DetecteurTemporiser *leDetecteurTemporiser;
+    /** @brief leDetecteurTemporiser */
+    DetecteurTemporise *leDetecteurTemporiser;
 };
 #endif // CLAVIER_H
