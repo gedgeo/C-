@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Centrale D&#39;alarme:  Fichier source de clavier.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="2014825.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Centrale D&#39;alarme
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">v1</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('clavier_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">clavier.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="clavier_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CLAVIER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CLAVIER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="detecteur_8h.html">detecteur.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="detecteurtemporise_8h.html">detecteurtemporise.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;QT_BEGIN_NAMESPACE</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespace_ui.html">   20</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">class </span><a class="code" href="class_clavier.html">Clavier</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;QT_END_NAMESPACE</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_clavier.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_clavier.html">Clavier</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_clavier.html#a88d51e15289173c91fe0ee0db8d3d7ee">Clavier</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_clavier.html#a1298ff4f0a39c08758c53c281425a486">~Clavier</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#a419ad1e1c54da2019e979558dff76324">on_pushButton_Marche_clicked</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#a72552221fecb118fa3b5cb209241ef6e">TraiterChiffre</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#ab1a71091fb4221c3dbe96a2a4bbd3ce0">onTimerLed_timeout</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#af416f9f54a55944113179350ce578570">on_pushButton_Arret_clicked</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#adf30f230697c7fb060d91fff1ecf76cd">on_pushButton_2_clicked</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#abcd15ceb43db9c46f3fec620171b080f">on_pushButton_3_clicked</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#ac2a6b5cd5cdc4c417adf64210a7d9836">on_pushButton_4_clicked</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_clavier.html#aa8cafccc094e8d7d22e742cb1c8bdde8">on_pushButton_5_clicked</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_clavier.html#aa7071449ac04b8006e8af4889d9e5081">   55</a></span>&#160;    Ui::Clavier *<a class="code" href="class_clavier.html#aa7071449ac04b8006e8af4889d9e5081">ui</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_clavier.html#a26a4a552760a05248de5b7448e157d1b">   57</a></span>&#160;    QTimer <a class="code" href="class_clavier.html#a26a4a552760a05248de5b7448e157d1b">timerLed</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_clavier.html#a469d4e5569f47980d3c2b35d9703b0ee">   59</a></span>&#160;    <a class="code" href="class_detecteur.html">Detecteur</a> *<a class="code" href="class_clavier.html#a469d4e5569f47980d3c2b35d9703b0ee">leDetecteur</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_clavier.html#ad4db2cf5babbbe48f7d923110492dbae">   61</a></span>&#160;    <a class="code" href="class_detecteur_temporise.html">DetecteurTemporise</a> *<a class="code" href="class_clavier.html#ad4db2cf5babbbe48f7d923110492dbae">leDetecteurTemporiser</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CLAVIER_H</span></div>
+<div class="ttc" id="aclass_clavier_html"><div class="ttname"><a href="class_clavier.html">Clavier</a></div><div class="ttdoc">The Clavier class.</div><div class="ttdef"><b>Definition:</b> clavier.h:30</div></div>
+<div class="ttc" id="aclass_clavier_html_a1298ff4f0a39c08758c53c281425a486"><div class="ttname"><a href="class_clavier.html#a1298ff4f0a39c08758c53c281425a486">Clavier::~Clavier</a></div><div class="ttdeci">~Clavier()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:33</div></div>
+<div class="ttc" id="aclass_clavier_html_a26a4a552760a05248de5b7448e157d1b"><div class="ttname"><a href="class_clavier.html#a26a4a552760a05248de5b7448e157d1b">Clavier::timerLed</a></div><div class="ttdeci">QTimer timerLed</div><div class="ttdoc">timerLed</div><div class="ttdef"><b>Definition:</b> clavier.h:57</div></div>
+<div class="ttc" id="aclass_clavier_html_a419ad1e1c54da2019e979558dff76324"><div class="ttname"><a href="class_clavier.html#a419ad1e1c54da2019e979558dff76324">Clavier::on_pushButton_Marche_clicked</a></div><div class="ttdeci">void on_pushButton_Marche_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:38</div></div>
+<div class="ttc" id="aclass_clavier_html_a469d4e5569f47980d3c2b35d9703b0ee"><div class="ttname"><a href="class_clavier.html#a469d4e5569f47980d3c2b35d9703b0ee">Clavier::leDetecteur</a></div><div class="ttdeci">Detecteur * leDetecteur</div><div class="ttdoc">leDetecteur</div><div class="ttdef"><b>Definition:</b> clavier.h:59</div></div>
+<div class="ttc" id="aclass_clavier_html_a72552221fecb118fa3b5cb209241ef6e"><div class="ttname"><a href="class_clavier.html#a72552221fecb118fa3b5cb209241ef6e">Clavier::TraiterChiffre</a></div><div class="ttdeci">void TraiterChiffre()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:48</div></div>
+<div class="ttc" id="aclass_clavier_html_a88d51e15289173c91fe0ee0db8d3d7ee"><div class="ttname"><a href="class_clavier.html#a88d51e15289173c91fe0ee0db8d3d7ee">Clavier::Clavier</a></div><div class="ttdeci">Clavier(QWidget *parent=nullptr)</div><div class="ttdoc">Clavier::Clavier.</div><div class="ttdef"><b>Definition:</b> clavier.cpp:12</div></div>
+<div class="ttc" id="aclass_clavier_html_aa7071449ac04b8006e8af4889d9e5081"><div class="ttname"><a href="class_clavier.html#aa7071449ac04b8006e8af4889d9e5081">Clavier::ui</a></div><div class="ttdeci">Ui::Clavier * ui</div><div class="ttdoc">ui</div><div class="ttdef"><b>Definition:</b> clavier.h:55</div></div>
+<div class="ttc" id="aclass_clavier_html_aa8cafccc094e8d7d22e742cb1c8bdde8"><div class="ttname"><a href="class_clavier.html#aa8cafccc094e8d7d22e742cb1c8bdde8">Clavier::on_pushButton_5_clicked</a></div><div class="ttdeci">void on_pushButton_5_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:99</div></div>
+<div class="ttc" id="aclass_clavier_html_ab1a71091fb4221c3dbe96a2a4bbd3ce0"><div class="ttname"><a href="class_clavier.html#ab1a71091fb4221c3dbe96a2a4bbd3ce0">Clavier::onTimerLed_timeout</a></div><div class="ttdeci">void onTimerLed_timeout()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:57</div></div>
+<div class="ttc" id="aclass_clavier_html_abcd15ceb43db9c46f3fec620171b080f"><div class="ttname"><a href="class_clavier.html#abcd15ceb43db9c46f3fec620171b080f">Clavier::on_pushButton_3_clicked</a></div><div class="ttdeci">void on_pushButton_3_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:82</div></div>
+<div class="ttc" id="aclass_clavier_html_ac2a6b5cd5cdc4c417adf64210a7d9836"><div class="ttname"><a href="class_clavier.html#ac2a6b5cd5cdc4c417adf64210a7d9836">Clavier::on_pushButton_4_clicked</a></div><div class="ttdeci">void on_pushButton_4_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:90</div></div>
+<div class="ttc" id="aclass_clavier_html_ad4db2cf5babbbe48f7d923110492dbae"><div class="ttname"><a href="class_clavier.html#ad4db2cf5babbbe48f7d923110492dbae">Clavier::leDetecteurTemporiser</a></div><div class="ttdeci">DetecteurTemporise * leDetecteurTemporiser</div><div class="ttdoc">leDetecteurTemporiser</div><div class="ttdef"><b>Definition:</b> clavier.h:61</div></div>
+<div class="ttc" id="aclass_clavier_html_adf30f230697c7fb060d91fff1ecf76cd"><div class="ttname"><a href="class_clavier.html#adf30f230697c7fb060d91fff1ecf76cd">Clavier::on_pushButton_2_clicked</a></div><div class="ttdeci">void on_pushButton_2_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:74</div></div>
+<div class="ttc" id="aclass_clavier_html_af416f9f54a55944113179350ce578570"><div class="ttname"><a href="class_clavier.html#af416f9f54a55944113179350ce578570">Clavier::on_pushButton_Arret_clicked</a></div><div class="ttdeci">void on_pushButton_Arret_clicked()</div><div class="ttdef"><b>Definition:</b> clavier.cpp:67</div></div>
+<div class="ttc" id="aclass_detecteur_html"><div class="ttname"><a href="class_detecteur.html">Detecteur</a></div><div class="ttdoc">The Detecteur class.</div><div class="ttdef"><b>Definition:</b> detecteur.h:23</div></div>
+<div class="ttc" id="aclass_detecteur_temporise_html"><div class="ttname"><a href="class_detecteur_temporise.html">DetecteurTemporise</a></div><div class="ttdoc">The DetecteurTemporise class.</div><div class="ttdef"><b>Definition:</b> detecteurtemporise.h:19</div></div>
+<div class="ttc" id="adetecteur_8h_html"><div class="ttname"><a href="detecteur_8h.html">detecteur.h</a></div><div class="ttdoc">Déclaration de la classe detecteur.</div></div>
+<div class="ttc" id="adetecteurtemporise_8h_html"><div class="ttname"><a href="detecteurtemporise_8h.html">detecteurtemporise.h</a></div><div class="ttdoc">Déclaration de la classe detecteur temporiser.</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> clavier.h:20</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="clavier_8h.html">clavier.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
