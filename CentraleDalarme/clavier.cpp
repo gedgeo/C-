@@ -9,7 +9,8 @@
  */
 
 
-Clavier::Clavier(QWidget *parent)
+
+Clavier::Clavier(CentraleDalarme *_centrale, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Clavier)
     ,leDetecteur(nullptr)
@@ -47,11 +48,10 @@ void Clavier::on_pushButton_Marche_clicked()
 
 void Clavier::TraiterChiffre()
 {
-    QPushButton *pbouton = static_cast<QPushButton *>(sender());
+    QPushButton *pbouton = (QPushButton *)sender();
     QString texteBouton = pbouton->text();
-    QMessageBox messageChiffre;
-    messageChiffre.setText("j'ai appuyé sur la touche " + texteBouton);
-    messageChiffre.exec();
+    centrale->FabriquerCode(texteBouton.toInt());
+    qDebug() << *centrale ;
 }
 
 void Clavier::onTimerLed_timeout()

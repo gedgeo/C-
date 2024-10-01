@@ -7,6 +7,7 @@
 
 #include "detecteur.h"
 #include "detecteurtemporise.h"
+#include "centraledalarme.h"
 
 /**
  *@file clavier.h
@@ -31,7 +32,7 @@ class Clavier : public QWidget
     Q_OBJECT
 
 public:
-    Clavier(QWidget *parent = nullptr);
+    explicit Clavier(CentraleDalarme *_centrale,QWidget *parent = nullptr);
     ~Clavier();
 
 
@@ -59,5 +60,8 @@ private:
     Detecteur *leDetecteur;
     /** @brief leDetecteurTemporiser */
     DetecteurTemporise *leDetecteurTemporiser;
+    /** @brief centrale */
+    CentraleDalarme *centrale;
+
 };
 #endif // CLAVIER_H
