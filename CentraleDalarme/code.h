@@ -2,17 +2,21 @@
 #define CODE_H
 #include "centraledalarme.h"
 
-class Code : public CentraleDalarme
+#include <QObject>
+
+#define TAILLE_CODE 4
+
+class Code
 {
 public:
-    Code(int _tailleCode);
-    bool verifierCode(const quint8 _unCode);
-    void memoriserCode(const quint8 _unCode);
+    Code(const int _tailleCode);
+    ~Code();
+    bool VerifierCode(quint8 *unCode);
+    void MemoriserCode(quint8 *nouveauCode);
 
 private:
-    quint8 codeUsine;
-    quint8 codeUtilisateur;
-    int tailleCode;
+    quint8 codeUsine[TAILLE_CODE];
+    quint8 codeUtilisateur[TAILLE_CODE];
 };
 
 #endif // CODE_H
