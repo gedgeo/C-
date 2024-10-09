@@ -2,6 +2,7 @@
 #define TESTALVEOLESLIBRE_H
 
 #include <QWidget>
+#include "alveoleslibres.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,5 +25,6 @@ private slots:
 
 private:
     Ui::TestAlveolesLibre *ui;
+    AlveolesLibres* lesAlveoles;
 };
 #endif // TESTALVEOLESLIBRE_H
