@@ -40,6 +40,7 @@ void TestAlveolesLibre::on_pushButtonReserver_clicked()
     if(lesAlveoles->Reserver(rangee,colonne)){
         QString coordonnees = QString("Rangée: %1, Colonne: %2").arg(rangee).arg(colonne);
         ui->listWidgetAlveolesLibres->addItem(coordonnees);
+        ui->lineEditNumAlveole->setText(coordonnees);
         qDebug()<<"Alveole reserver";
     }else{
         qDebug()<<"la reservation a echoué";
