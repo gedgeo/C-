@@ -9,10 +9,9 @@ class Stock
 {
 public:
     Stock();
-
     void AjouterRouleau(const Rouleau _nouveau);
-    int RechercherSerie(QMultiMap<int, Rouleau>::iterator,int positionDebut);
-    bool RetirerRouleauDuStock(QMultiMap<int, Rouleau>::iterator positionRouleau);
+    int RechercherSerie(QMultiMap<int,Rouleau>::iterator &_positionDebut);
+    bool RetirerRouleauDuStock(const QMultiMap<int,Rouleau>::iterator _positionRouleau);
     QStringList ObtenirContenuDuStock() const;
 
 private:

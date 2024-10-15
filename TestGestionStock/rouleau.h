@@ -7,13 +7,14 @@ class Rouleau
 {
 public:
     Rouleau();
-    Rouleau(const Rouleau & _autre);
-    Rouleau(const QString& _reference, int _diametre);
+    Rouleau(const Rouleau &_autre);
+    Rouleau(const QString _reference, const int _diametre);
+    Rouleau &operator=(const Rouleau &_autre);
     ~Rouleau();
+    void AffecterLocalisation(const int _rangee, const int _colonne);
+    void ObtenirLocalisation(int &_rangee, int &_colonne);
     QString getReference() const;
     int getDiametre() const;
-    void AffecterLocalisation(int _rangee, int _colonne);
-    void ObtenirLocalisation(int& _rangee, int& _colonne) const;
 
 
 private:
