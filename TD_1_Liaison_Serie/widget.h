@@ -18,15 +18,14 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     void ApplicationSerie();
-    virtual bool OpenPort();
-    virtual void closePort();
-    void sendData(const QByteArray &data);
+
 
 
 private slots:
     void on_pushButton_clicked();
-    void handleError(QSerialPort::SerialPortError);
-    void readData();
+    void on_pushButtonEnoyer_clicked();
+    void on_comboBox_currentTextChanged(const QString &arg1);
+    void onQSerialPort_readyRead();
 
 private:
     Ui::Widget *ui;

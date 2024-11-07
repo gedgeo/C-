@@ -97,7 +97,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Ouvrir le port série</string>
+    <string>Ouvrir le port</string>
    </property>
   </widget>
  </widget>
