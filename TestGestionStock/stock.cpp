@@ -9,56 +9,75 @@ void Stock::AjouterRouleau(const Rouleau _nouveau)
     lesRouleaux.insert(_nouveau.getDiametre(), _nouveau);
 }
 
-int Stock::RechercherSerie(QMultiMap<int,Rouleau>::iterator &_positionDebut)
+QList<QMultiMap<int, Rouleau>::iterator> Stock::RechercherSerie()
 {
-    int nbRouleauSorti = lesRouleaux.size();
-    int ecartDiametre = 40;
+    QList<QMultiMap<int, Rouleau>::iterator> result;
 
-    if (nbRouleauSorti >= 6)
+    const int rouleauxRequis = 6;
+    int nbRouleauxDisponibles = lesRouleaux.size();
+
+    if (nbRouleauxDisponibles == 0)
+        return result;
+
+    QList<QMultiMap<int, Rouleau>::iterator> iterators;
+    for (auto it = lesRouleaux.begin(); it != lesRouleaux.end(); ++it)
     {
-        for (auto it = lesRouleaux.begin(); it != lesRouleaux.end() - 6; it++)
+        iterators.append(it);
+    }
+
+    int N = iterators.size();
+    int minDifference = std::numeric_limits<int>::max();
+    int bestStartIndex = -1;
+    int seriesLength = qMin(rouleauxRequis, N);
+
+    for (int i = 0; i <= N - seriesLength; ++i)
+    {
+        int minDiameter = iterators[i].key();
+        int maxDiameter = iterators[i + seriesLength - 1].key();
+
+        int difference = maxDiameter - minDiameter;
+
+        if (difference < minDifference)
         {
-            for (auto it2 = lesRouleaux.begin() + 6; it2 != lesRouleaux.end(); it2++)
-            {
-                if (ecartDiametre > it.key() - it2.key())
-                {
-                    _positionDebut = it;
-                    ecartDiametre = it.key() - it2.key();
-                }
-            }
+            minDifference = difference;
+            bestStartIndex = i;
         }
     }
-    else {
-        for (auto it = lesRouleaux.begin(); it != lesRouleaux.end(); it++)
+
+    if (bestStartIndex != -1)
+    {
+        for (int i = bestStartIndex; i < bestStartIndex + seriesLength; ++i)
         {
-            int cpt;
-            nbRouleauSorti = cpt++;
+            result.append(iterators[i]);
         }
     }
-    return nbRouleauSorti;
+    else
+    {
+        for (int i = 0; i < seriesLength; ++i)
+        {
+            result.append(iterators[i]);
+        }
+    }
+
+    return result;
 }
 
-bool Stock::RetirerRouleauDuStock(const QMultiMap<int,Rouleau>::iterator _positionRouleau)
+bool Stock::RetirerRouleauDuStock(QMultiMap<int, Rouleau>::iterator position)
 {
-    bool retour =false;
-    if(_positionRouleau != lesRouleaux.end())
-    {
-        lesRouleaux.erase(_positionRouleau);
-        retour =true;
+    if(position != lesRouleaux.end()){
+        lesRouleaux.erase(position);
+        return true;
     }
-    return retour;
+    return false;
 }
 
 QStringList Stock::ObtenirContenuDuStock() const
 {
-    QStringList descriptionStock;
+    QStringList contenu;
     for (auto it = lesRouleaux.begin(); it != lesRouleaux.end(); it++)
     {
-        QString descriptionRouleau = QString("Référence : %1, Diamètre : %2 ")
-                                         .arg(it.value().getReference())
-                                         .arg(it.value().getDiametre());
-        descriptionStock.append(descriptionRouleau);
+        contenu << QString("Rouleau: %1, Diamètre: %2").arg(it.value().getReference()).arg(it.key());
 
     }
-    return descriptionStock;
+    return contenu;
 }
