@@ -1,6 +1,5 @@
 #include "trajectoire.h"
 #include <iostream>
-#include <string>
 
 
 Trajectoire::Trajectoire(const int _nbEtapesMaxi):

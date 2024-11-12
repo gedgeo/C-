@@ -1,11 +1,10 @@
 #ifndef TESTGESTIONSTOCK_H
 #define TESTGESTIONSTOCK_H
-#include "stock.h"
-#include "rouleau.h"
-#include<QMessageBox>
-#include <QString>
-#include <QStringList>
+
 #include <QWidget>
+#include "alveoleslibres.h"
+#include "stock.h"
+#include "chariot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,15 +23,17 @@ public:
 
 private slots:
     void on_pushButtonNouveau_clicked();
-
     void on_pushButtonRetrait_clicked();
-
     void on_pushButtonSuppression_clicked();
 
 private:
     Ui::TestGestionStock *ui;
-    int nbRouleau;
-    QMultiMap<int,Rouleau>::iterator debut;
-    Stock leStock;
+    Stock stock;
+    Alveoleslibres alveolesLibres;
+    Chariot chariot;
+    QList<Rouleau> rouleauxEnceinte;
+
+    void afficherStock();
+    void afficherRouleauEnceinte();
 };
 #endif // TESTGESTIONSTOCK_H
