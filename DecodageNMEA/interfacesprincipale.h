@@ -22,12 +22,19 @@ public:
     InterfacesPrincipale(QWidget *parent = nullptr);
     ~InterfacesPrincipale();
 
+    void decodageNMEA(const QString &_trameNMEA);
+
+
 private slots:
     void on_actionConfigurer_triggered();
+    void onQSerialPort_readyRead();
+
 
 private:
     Ui::InterfacesPrincipale *ui;
     DialogConfiguerLiaisonGPS configGPS;
     QSerialPort lePort;
+    QByteArray trameCourante;
+
 };
 #endif // INTERFACESPRINCIPALE_H
