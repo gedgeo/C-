@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__.'/../Modeles/modele.inc.php';
 
 if (filter_input(INPUT_SERVER, 'REQUEST_METHOD') == 'GET') {
